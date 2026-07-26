@@ -1,20 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package org.joaquinsanchez.system;
 
-/**
- *
- * @author joaqu
- */
+import org.joaquinsanchez.controller.EmpleadoController;
+import org.joaquinsanchez.model.Empleado;
+import org.joaquinsanchez.view.EmpleadoView;
+
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        EmpleadoController controller = new EmpleadoController();
+        EmpleadoView view = new EmpleadoView();
+
+        // Aca lo que hicimos fue crear un empleado original"(nuestro prototipo base)
+        Empleado original = controller.crearEmpleado(1, "Ana Pérez", "Desarrolladora", 8500.00);
+        view.mostrarMensaje("Empleado original:");
+        view.mostrarEmpleado(original);
+
+        // Aca clonamos el prototipo para crear un nuevo empleado parecido
+        Empleado clon = controller.clonarEmpleado(original, 2);
+        clon.setNombre("Carlos Ruiz");
+        clon.setSalario(9000.00);
+
+        view.mostrarMensaje("\nEmpleado clonado y modificado...:");
+        view.mostrarEmpleado(clon);
+
+        // Mostramos todos los empleados registrados
+        view.mostrarListaEmpleados(controller.obtenerEmpleados());
     }
-    
 }
