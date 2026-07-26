@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.joaquinsanchez.model;
 
-/**
- *
- * @author joaqu
- */
-public class Prototype {
-    
+//Aca hacemos la interfaz que define nuestro contrato con prototype
+
+public interface Prototype {
+    Prototype clonar();
 }
