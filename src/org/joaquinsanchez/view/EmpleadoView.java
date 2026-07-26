@@ -1,13 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.joaquinsanchez.view;
 
-/**
- *
- * @author joaqu
- */
+import org.joaquinsanchez.model.Empleado;
+import java.util.List;
+
 public class EmpleadoView {
-    
+
+    public void mostrarMensaje(String mensaje) {
+        System.out.println(mensaje);
+    }
+
+    public void mostrarEmpleado(Empleado empleado) {
+        System.out.println(">> " + empleado.toString());
+    }
+
+    public void mostrarListaEmpleados(List<Empleado> empleados) {
+        System.out.println("\n=== Lista de empleados ===");
+        for (Empleado e : empleados) {
+            mostrarEmpleado(e);
+        }
+    }
 }
